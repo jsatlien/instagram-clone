@@ -1,12 +1,26 @@
-function routerSettings ($stateProvider, $urlRouterProvider){
+function routerConfig ($stateProvider, $urlRouterProvider){
 	$stateProvider
-		.state('home',{
+		.state('home', {
 			url: '/',
-			controller: 'HomeController'
+			templateUrl: 'templates/home.tpl.html',
+			controller: 'HomeController',
+
 		})
+
+		.state('add',{
+			url: '/add',
+			templateUrl: 'templates/add.tpl.html',
+			controller: 'AddController',
+
+		})
+
+		.state('about',{
+			url: '/about',
+			templateUrl: 'templates/about.tpl.html'
+		});
 
 	$urlRouterProvider.otherwise('/');
 };
 
-routerSettings.$inject = ['$stateProvider', '$urlRouterProvider'];
+routerConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 export { routerConfig };
