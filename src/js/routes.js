@@ -10,7 +10,7 @@ function routerConfig ($stateProvider, $urlRouterProvider){
 		.state('add',{
 			url: '/add',
 			templateUrl: 'templates/add.tpl.html',
-			controller: 'AddController'
+			controller: 'AddController',
 
 		})
 
