@@ -1,18 +1,18 @@
 <h1> Add Image </h1>
 
 
-<form name="new-image" ng-submit="addImage(image)">
-	<p class="control">
+<form class="form" name="new-image" ng-submit="addImage(image)">
+	<p>
 		<input name="title" type="text" placeholder="Add a title..."
 		   	   ng-model="image.title" />
 	</p>
 
-	<p class="control">
+	<p>
 		<input name="url" type="text" placeholder="Add url..."
 			   ng-model="image.url" />
 	</p>
 
-	<p class="control">
+	<p>
 		<textarea name="description" type="textarea" placeholder="Add a description..."
 			   ng-model="image.description">
 		</textarea>
