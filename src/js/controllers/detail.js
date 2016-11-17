@@ -4,7 +4,7 @@ function DetailController ($scope, $http, $stateParams) {
   $scope.image = {};
 
   function init () {
-    let url = SERVER + $stateParams.id;
+    let url = (SERVER + '/images') + $stateParams.id;
     $http.get(url).then((resp) => {
       $scope.image = resp.data;
     });
