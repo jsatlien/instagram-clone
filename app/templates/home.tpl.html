@@ -1,15 +1,20 @@
 <h1> Dope @$$ Images </h1>
 <div class='home-content' ui-view>
-<ul class="images">
+<ul class="images img-list">
 
 	<li ng-repeat="image in images">
 	  <div class="posts tilt">
 		<a href="#/detail/{{image.id}}">
 		{{ image.title }}
-		<img ng-src="{{image.url}}" />
+		<img ng-src="{{image.url}}" class="homeimage"/>
+		<!-- <span class="overlay"></span> -->
 		{{ image.description }}
 		</a>
+		<p><span class="text-content likescounthome">Likes:</span> {{ image.like_count }}</p>
+		
 	  </div>
 
 	</li>
 </ul>
+
+

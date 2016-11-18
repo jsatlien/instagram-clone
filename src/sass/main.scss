@@ -40,3 +40,38 @@
 	margin: 5px;
 	font-size: 18px;
 }
+
+.likepic {
+
+	width: 60px;
+	height: 60px;
+}
+
+.likepic:hover {
+	cursor: pointer;
+}
+
+.likecount {
+	margin-left: -40px;
+	position: relative;
+	top: -25px;
+}
+
+.likescounthome {
+	font-weight: bold;
+}
+
+
+
+
+// .hoverimage:hover .overlay {
+//   position:absolute;
+//   width: 48px;
+//   height: 48px;
+//   z-index: 100;
+//   background: transparent url('assets/heart.png') no-repeat;
+//   cursor: pointer;
+//   margin-top: -200px;
+//   margin-left: 202px;
+// }
+
