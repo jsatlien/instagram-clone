@@ -17,6 +17,16 @@ function DetailController ($scope, $http, $stateParams, $state) {
     $state.go('home')
 
   }
+
+    $scope.addLike = function (image) {
+      console.log(image)
+      if (image.like_count === null) {
+        image.like_count = 0;
+      }
+      image.like_count++;
+      let updateImage = $http.patch(SERVER + '/images/' + image.id, image);
+      console.log(updateImage)
+    }
 }
 
 DetailController.$inject = ['$scope', '$http', '$stateParams', '$state'];
