@@ -11,14 +11,15 @@
       <div class="card-content">
         <div class="media">
           <div class="media-content">
+          <span class="likes"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/> <span class="likecount">{{ image.like_count }}</span> </span>
             <p class="title is-5">{{ image.title }}</p>
           </div>
         </div>
         <div class="content">
           <p>{{ image.description }}</p>
           <small>{{ image.created_at }}</small>
-          <button class="is-button likes" ng-click="addLike(image)"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" /> {{ image.like_count }} </button>
-          <button class="remove" ng-click="delete(image)">Remove Image</button>
+          
+          <button class="button is-danger" ng-click="delete(image)">Remove Image</button>
         </div>
       </div>
     </div>
