@@ -17,7 +17,8 @@
         <div class="content">
           <p>{{ image.description }}</p>
           <small>{{ image.created_at }}</small>
-          <span class="likes"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" ng-click='addLike(image)'/> {{ image.like_count }} </span>
+          <button class="is-button likes" ng-click="addLike(image)"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" /> {{ image.like_count }} </button>
+          <button class="remove" ng-click="delete(image)">Remove Image</button>
         </div>
       </div>
     </div>
