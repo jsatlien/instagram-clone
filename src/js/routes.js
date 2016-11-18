@@ -19,7 +19,7 @@ function routerConfig ($stateProvider, $urlRouterProvider){
 			templateUrl: 'templates/about.tpl.html'
 		})
 
-		.state('home.detail', {
+		.state('detail', {
 			url: '/detail/:id',
 			templateUrl: 'templates/detail.tpl.html',
 			controller: 'DetailController'
