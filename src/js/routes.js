@@ -1,4 +1,4 @@
-function routerConfig ($stateProvider, $urlRouterProvider)
+function routerConfig ($stateProvider, $urlRouterProvider){
 	$stateProvider
 		.state('home', {
 			url: '/',
@@ -19,8 +19,8 @@ function routerConfig ($stateProvider, $urlRouterProvider)
 			templateUrl: 'templates/about.tpl.html'
 		})
 
-		.state('home.detail', {
-			url: 'detail/:id',
+		.state('detail', {
+			url: '/detail/:id',
 			templateUrl: 'templates/detail.tpl.html',
 			controller: 'DetailController'
 		});

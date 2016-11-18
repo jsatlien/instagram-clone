@@ -1,19 +1,26 @@
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="{{ image.url }}" alt="">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-content">
-        <p class="title is-5">{{ image.title }}</p>
+
+<div class="modal is-active">
+  <div class="modal-background" ng-click="removeModal()"></div>
+  <div class="modal-content">
+    <div class="card">
+      <div class="card-image">
+        <figure class="image is-4by3">
+          <img src="{{ image.url }}" alt="">
+        </figure>
+      </div>
+      <div class="card-content">
+        <div class="media">
+          <div class="media-content">
+            <p class="title is-5">{{ image.title }}</p>
+          </div>
+        </div>
+        <div class="content">
+          {{ image.description }}
+          <small>{{ image.created_at }}</small>
+          <span class="likes"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" ng-click='addLike(image)'/> {{ image.like_count }} </span>
+        </div>
       </div>
     </div>
-    <div class="content">
-      {{ image.description }}
-      <small>{{ image.created_at }}</small>
-      <span class="likes"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" ng-click='addLike(image)'/> {{ image.like_count }} </span>
-    </div>
   </div>
+  <button class="modal-close" ng-click="removeModal()"></button>
 </div>
