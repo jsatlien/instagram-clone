@@ -3,12 +3,13 @@
 <ul class="images">
 
 	<li ng-repeat="image in images">
+	  <div class="posts tilt">
 		<a href="#/detail/{{image.id}}">
 		{{ image.title }}
 		<img ng-src="{{image.url}}" />
 		{{ image.description }}
 		</a>
-
+	  </div>
 
 	</li>
 </ul>
