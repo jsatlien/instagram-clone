@@ -68,17 +68,6 @@
 }
 
 
-// .hoverimage:hover .overlay {
-//   position:absolute;
-//   width: 48px;
-//   height: 48px;
-//   z-index: 100;
-//   background: transparent url('assets/heart.png') no-repeat;
-//   cursor: pointer;
-//   margin-top: -200px;
-//   margin-left: 202px;
-// }
-
 .homeimage {
     height: 125px;
     display: block;
@@ -86,4 +75,36 @@
     margin: 10px auto;
 } 
 
+#overlay .text {
+	position:relative;
+	bottom:30px;
+	left:0px;
+	visibility:hidden;
+}
+
+#overlay:hover .text {
+	color: white;
+	visibility:visible;
+	background:rgba(0,0,0,0.5);
+
+
+}
+
+.overlayfit {
+	width: 200px;
+	height: 125px;
+	display: block;
+	margin-left: 15px;
+
+}
+
+.imagetitles {
+	font-weight: bold;
+}
+
+.smallheart {
+	height: 15px;
+	width: 15px;
+	margin-bottom: -3px;
+}
 
