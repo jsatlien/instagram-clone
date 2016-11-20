@@ -4,15 +4,16 @@
 
 	<li ng-repeat="image in images">
 	  <div class="posts tilt">
+	  	<span class="imagetitles">{{ image.title }}</span>
 		<a href="#/detail/{{image.id}}">
-		{{ image.title }}
+		
 	  <div id="overlay" class="overlayfit">
 		<img ng-src="{{image.url}}" class="homeimage"/>
-		<p class="text"> {{ image.like_count }} </p>
-		{{ image.description }}
+		<p class="text"> {{ image.like_count }} <img src="images/smallheart.png" class="smallheart" /> </p>
+		<!-- {{ image.description }} -->
 	  </div>
 		</a>
-		<p><span class="text-content likescounthome">Likes:</span> {{ image.like_count }}</p>
+		<!-- <p><span class="text-content likescounthome">Likes:</span> {{ image.like_count }}</p> -->
 		
 	  </div>
 
