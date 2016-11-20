@@ -6,8 +6,12 @@ function DetailController ($scope, $http, $stateParams, $state) {
 
   function init () {
     let url = (SERVER + '/images/') + $stateParams.id;
+    let commentsUrl = (SERVER + '/images/' + $stateParams.id + '/comments')
     $http.get(url).then((resp) => {
       $scope.image = resp.data;
+    $http.get(commentsUrl).then((response) => {
+      $scope.comments = response.data;
+    });
       console.log($stateParams.id)
     });
   };
@@ -17,7 +21,7 @@ function DetailController ($scope, $http, $stateParams, $state) {
   $scope.removeModal = function () {
     $state.go('home')
 
-  }
+  };
 
   $scope.addLike = function (image) {
     console.log(image)
@@ -27,7 +31,7 @@ function DetailController ($scope, $http, $stateParams, $state) {
     image.like_count++;
     let updateImage = $http.patch(SERVER + '/images/' + image.id, image);
     console.log(updateImage)
-  }
+  };
 
   $scope.delete = function (image) {
   $http.delete(SERVER + '/images/' + image.id).then(function (resp) {
@@ -40,13 +44,23 @@ function DetailController ($scope, $http, $stateParams, $state) {
   $state.go('home');
   };
 
-  $scope.addComment = (message) => {
-    let newComment = { content: message };
-    $http.post(SERVER + '/images/' + $stateParams.id + '/comments', newComment)
-    $scope.comments.push(newComment);
+  $scope.addComment = (commentContent) => {
+    let newComment = { content: commentContent };
+    $http.post(SERVER + '/images/' + $stateParams.id + '/comments', newComment).then( function(resp) {
+      $scope.comments.push(newComment);
+
+    });
     $scope.message = '';
-    }
-}
+  };
+
+  $scope.removeComment = (comment) => {
+    $http.delete(SERVER + '/images/' + $stateParams.id + '/comments/' + comment.id).then( function (resp) {
+      $scope.comments = $scope.comments.filter( function (index) {
+        return (comment.id !== index.id);
+      });
+    });
+  };
+};
 
 DetailController.$inject = ['$scope', '$http', '$stateParams', '$state'];
 export { DetailController };

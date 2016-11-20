@@ -24,7 +24,9 @@
   		           	<button class="button is-primary">+</button>
   		        </form>
               <ul class="comments-list">
-                <li ng-repeat="comment in comments">{{ comment.content }}</li>
+                <li ng-repeat="comment in comments"> {{ comment.content }}
+                  <button type="button is-danger" name="button" ng-click="removeComment(comment)">x</button>
+                </li>
               </ul>
           </div>
           <button class="button is-danger" ng-click="delete(image)">Remove Image</button>
