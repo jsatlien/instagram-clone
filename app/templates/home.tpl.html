@@ -6,9 +6,11 @@
 	  <div class="posts tilt">
 		<a href="#/detail/{{image.id}}">
 		{{ image.title }}
+	  <div id="overlay" class="overlayfit">
 		<img ng-src="{{image.url}}" class="homeimage"/>
-		<!-- <span class="overlay"></span> -->
+		<p class="text"> {{ image.like_count }} </p>
 		{{ image.description }}
+	  </div>
 		</a>
 		<p><span class="text-content likescounthome">Likes:</span> {{ image.like_count }}</p>
 		
