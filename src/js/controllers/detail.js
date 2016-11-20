@@ -2,12 +2,13 @@ import { SERVER } from "../server";
 
 function DetailController ($scope, $http, $stateParams, $state) {
   $scope.image = {};
+  $scope.comments = [];
 
   function init () {
     let url = (SERVER + '/images/') + $stateParams.id;
     $http.get(url).then((resp) => {
       $scope.image = resp.data;
-      console.log(resp.data)
+      console.log($stateParams.id)
     });
   };
 
@@ -38,6 +39,13 @@ function DetailController ($scope, $http, $stateParams, $state) {
   });
   $state.go('home');
   };
+
+  $scope.addComment = (message) => {
+    let newComment = { content: message };
+    $http.post(SERVER + '/images/' + $stateParams.id + '/comments', newComment)
+    $scope.comments.push(newComment);
+    $scope.message = '';
+    }
 }
 
 DetailController.$inject = ['$scope', '$http', '$stateParams', '$state'];
