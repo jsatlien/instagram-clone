@@ -61,7 +61,11 @@
 	font-weight: bold;
 }
 
+.homeimage {
+	max-height: 200px;
+	max-width: 200px;
 
+}
 
 
 // .hoverimage:hover .overlay {
@@ -75,3 +79,9 @@
 //   margin-left: 202px;
 // }
 
+.homeimage {
+    height: 125px;
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+}
