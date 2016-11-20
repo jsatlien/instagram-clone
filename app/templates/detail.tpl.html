@@ -5,7 +5,7 @@
     <div class="card">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img src="{{ image.url }}" alt="">
+          <img src="{{ image.url }}" alt="" ng-dblclick="addLike(image)">
         </figure>
       </div>
       <div class="card-content">
@@ -18,7 +18,17 @@
         <div class="content">
           <p>{{ image.description }}</p>
           <small>{{ image.created_at }}</small>
-          
+          <div class="comments-section">
+              <form ng-submit="addComment(message)">
+  				  	<input type="text" placeholder="Add Comment..." ng-model="message"/></input>
+  		           	<button class="button is-primary">+</button>
+  		        </form>
+              <ul class="comments-list">
+                <li ng-repeat="comment in comments"> {{ comment.content }}
+                  <button type="button is-danger" name="button" ng-click="removeComment(comment)">x</button>
+                </li>
+              </ul>
+          </div>
           <button class="button is-danger" ng-click="delete(image)">Remove Image</button>
         </div>
       </div>
