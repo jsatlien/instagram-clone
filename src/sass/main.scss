@@ -162,6 +162,10 @@
         overflow: hidden;
         cursor: pointer;
 				background-size: cover;
+				user-select: none;
+				height: 500px;
+				width: 640px;
+
     }
 }
 
@@ -190,6 +194,7 @@
 								color: #8384BF;
 								font-family: 'Luckiest Guy', cursive;
 								cursor: pointer;
+								user-select: none;
         }
         img {
             margin: 5px;
