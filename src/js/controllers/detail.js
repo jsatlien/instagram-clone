@@ -23,6 +23,11 @@ function DetailController ($scope, $http, $stateParams, $state) {
     });
   };
 
+  function initImages() {
+		$http.get(SERVER + '/images').then(function (response){
+			$scope.images = response.data;
+		});
+	};
 
   init();
 
@@ -46,10 +51,12 @@ function DetailController ($scope, $http, $stateParams, $state) {
       console.log(resp);
 
     $scope.images = $scope.images.filter(function (x) {
-       return x.id !== image.id
+       return (image.id !== x.id)
+    console.log($scope.images)
     });
   });
   $state.go('home');
+  initImages();
   };
 
   $scope.addComment = (commentContent) => {

@@ -5,8 +5,8 @@
     <div class="card detail-card">
       <div class="card-image detailed-view-image">
         <span class="likes">
-          <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/>
-          <span class="likecount">{{ image.like_count }}</span>
+          <img src="http://www.clipartbest.com/cliparts/RiG/y44/RiGy44jLT.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/>
+          <span class="likecount" ng-click="addLike(image)">{{ image.like_count }}</span>
         </span>
         <figure class="image is-4by3 figure-image">
           <img src="{{ image.url }}" alt="" ng-dblclick="addLike(image)">
@@ -16,7 +16,7 @@
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="title is-5">{{ image.title }}</p>
+            <p class="title is-5 image-title">{{ image.title }}</p>
           </div>
         </div>
         <div class="content">
@@ -24,17 +24,17 @@
           <div class="comments-section">
               <form ng-submit="addComment(message)">
   				  	    <input class="comment-input" type="text" placeholder="Add Comment..." ng-model="message"/></input>
-  		           	<button class="button is-primary comment-button">+</button>
+  		           	<button class="button comment-button">+</button>
   		        </form>
               <ul class="comments-list">
                 <li class='single-comment-list' ng-repeat="comment in comments">
                   <small class="comment-date"> {{ comment.created_at }} </small><strong class ='anonymous'>Anonymous</strong> said:
                   <span class='comment-text'> {{ comment.content }} </span>
-                  <button class='button is-danger delete-button' type="button" name="button" ng-click="removeComment(comment)">x</button>
+                  <button class='button delete-button' type="button" name="button" ng-click="removeComment(comment)">x</button>
                 </li>
               </ul>
           </div>
-          <button class="button is-danger" ng-click="delete(image)">Remove Image</button>
+          <button class="button remove-image-button" ng-click="delete(image)">Remove Image</button>
         </div>
       </div>
     </div>

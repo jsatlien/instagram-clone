@@ -1,28 +1,60 @@
 @import 'bulma';
 
+.main-nav {
+	display: flex;
+	justify-content: space-between;
+	width: 675px;
+	margin: 20px auto;
+	a {
+		color: #198EF8;
+
+	}
+}
+
 .container {
 	width: 900px;
 	margin: 50px auto;
 	text-align: center;
 }
 
+.img-list {
+	width: 900px;
+	padding-left: 40px;
+	margin: 10px auto;
+	max-height: auto;
+}
 .posts {
-    // height: 275px;
-    // width: 275px;
-    // margin: 0 15px 15px 0;
-    // float: left;
-    // overflow: auto;
-    // border: 1px solid black;
 
-  border: 10px solid #fff;
+	.homeimage {
+	    height: 250px;
+	    display: block;
+	    width: 250px;
+			background-size: cover;
+		  -webkit-box-shadow: 1px 1px 1px #111;
+		  box-shadow: 1px 1px 1px #111;
+
+	}
   float: left;
-  height: 250px;
-  width: 250px;
+  height: 220px;
+  width: 220px;
   margin: 7px;
   overflow: hidden;
+	position: relative;
 
-  -webkit-box-shadow: 1px 1px 1px #111;
-          box-shadow: 1px 1px 1px #111;
+	.imagetitles {
+		font-weight: bold;
+		display: none;
+		position: absolute;
+		margin: 3px 5px;
+		color: white;
+		background:rgba(0,0,0,0.5);
+		text-align: center;
+		top: 5px;
+		left: 20px;
+		padding: 2px;
+
+	}
+
 }
 
 
@@ -63,14 +95,6 @@
 
 }
 
-
-.homeimage {
-    height: 125px;
-    display: block;
-    width: 200px;
-    margin: 10px auto;
-}
-
 #overlay .text {
 	position:relative;
 	bottom:30px;
@@ -94,9 +118,10 @@
 
 }
 
-.imagetitles {
-	font-weight: bold;
+#overlay:hover .imagetitles {
+	display:inline;
 }
+
 
 .smallheart {
 	height: 15px;
@@ -118,6 +143,11 @@
 .textareak {
 	width: 300px;
 	height: 150px;
+	padding: 5px;
+}
+
+.add-input {
+	padding: 5px;
 }
 
 .inputform {
@@ -131,6 +161,11 @@
     img {
         overflow: hidden;
         cursor: pointer;
+				background-size: cover;
+				user-select: none;
+				height: 500px;
+				width: 640px;
+
     }
 }
 
@@ -138,6 +173,7 @@
     text-align: left;
     li {
         list-style: none;
+				width: 400px;
     }
 }
 
@@ -150,16 +186,20 @@
 
 
         .likecount {
-                font-size: 10px;
+                font-size: 15px;
                 position: absolute;
-                bottom: 21px;
-                right: 23px;
+                bottom: 19px;
+                left: 21px;
 								text-align: center;
+								color: #8384BF;
+								font-family: 'Luckiest Guy', cursive;
+								cursor: pointer;
+								user-select: none;
         }
         img {
             margin: 5px;
-            height: 40px;
-            width: 40px;
+            height: 45px;
+            width: 45px;
         }
     }
 }
@@ -182,24 +222,56 @@
     height: 40px;
     width: 40px;
     margin-left: -10px;
+		background-color: #198EF8;
+		color: white;
+		border-top-left-radius: 0px;
+		border-bottom-left-radius: 0px;
 }
 
 .comment-date {
     font-size: 8px;
+		display: block;
 }
 
 .anonymous {
-    color: #22D0B2 ;
+    color: #198EF8;
 }
 
-.delete-button {
-    float: right;
-}
+
 
 .single-comment-list {
     margin: 15px 5px;
+		position: relative;
+		width: 600px;
+		min-height: 32px;
+		margin-right: 0px;
+		margin-left: 25px;
+
+		.delete-button {
+		    float: right;
+				position: absolute;
+				right: -35px;
+				top: 11px;
+				background-color: #FF3D33;
+				color: white;
+				width: 40px;
+				font-family: 'Nunito', sans-serif;
+
+		}
 }
 
 .comment-text {
     text-align: right;
+		min-height: 36px;
+		width: 600px;
+}
+
+.image-title {
+	color: #198EF8;
+}
+
+.remove-image-button {
+	background-color: #FF3D33;
+	color: white;
+	font-family: 'Nunito', sans-serif;
 }
