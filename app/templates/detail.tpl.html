@@ -6,7 +6,7 @@
       <div class="card-image detailed-view-image">
         <span class="likes">
           <img src="http://www.clipartbest.com/cliparts/RiG/y44/RiGy44jLT.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/>
-          <span class="likecount">{{ image.like_count }}</span>
+          <span class="likecount" ng-click="addLike(image)">{{ image.like_count }}</span>
         </span>
         <figure class="image is-4by3 figure-image">
           <img src="{{ image.url }}" alt="" ng-dblclick="addLike(image)">
