@@ -3,10 +3,12 @@
 
 	<li ng-repeat="image in images">
 	  <div class="posts tilt">
-	  	<span class="imagetitles">{{ image.title }}</span>
+ 	  <div id="overlay" class="overlayfit">
+	  	
 		<a href="#/detail/{{image.id}}">
-		
-	  <div id="overlay" class="overlayfit">
+		<!-- <span class="imagetitles overlaytitle">{{ image.title }}</span> -->
+		<p class="imagetitles overlaytitle">{{ image.title }}</p>
+	 
 		<img ng-src="{{image.url}}" class="homeimage"/>
 		<p class="text"> {{ image.like_count }} <img src="images/smallheart.png" class="smallheart" /> </p>
 		<!-- {{ image.description }} -->
