@@ -2,30 +2,35 @@
 <div class="modal is-active">
   <div class="modal-background" ng-click="removeModal()"></div>
   <div class="modal-content">
-    <div class="card">
-      <div class="card-image">
-        <figure class="image is-4by3">
+    <div class="card detail-card">
+      <div class="card-image detailed-view-image">
+        <span class="likes">
+          <img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/>
+          <span class="likecount">{{ image.like_count }}</span>
+        </span>
+        <figure class="image is-4by3 figure-image">
           <img src="{{ image.url }}" alt="" ng-dblclick="addLike(image)">
         </figure>
+        <small class ="detail-created-at">{{ image.created_at }}</small>
       </div>
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-          <span class="likes"><img src="http://icons.iconarchive.com/icons/graphicloads/100-flat/256/heart-favourite-icon.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/> <span class="likecount">{{ image.like_count }}</span> </span>
             <p class="title is-5">{{ image.title }}</p>
           </div>
         </div>
         <div class="content">
           <p>{{ image.description }}</p>
-          <small>{{ image.created_at }}</small>
           <div class="comments-section">
               <form ng-submit="addComment(message)">
-  				  	<input type="text" placeholder="Add Comment..." ng-model="message"/></input>
-  		           	<button class="button is-primary">+</button>
+  				  	    <input class="comment-input" type="text" placeholder="Add Comment..." ng-model="message"/></input>
+  		           	<button class="button is-primary comment-button">+</button>
   		        </form>
               <ul class="comments-list">
-                <li ng-repeat="comment in comments"> {{ comment.content }}
-                  <button type="button is-danger" name="button" ng-click="removeComment(comment)">x</button>
+                <li class='single-comment-list' ng-repeat="comment in comments">
+                  <small class="comment-date"> {{ comment.created_at }} </small><strong class ='anonymous'>Anonymous</strong> said:
+                  <span class='comment-text'> {{ comment.content }} </span>
+                  <button class='button is-danger delete-button' type="button" name="button" ng-click="removeComment(comment)">x</button>
                 </li>
               </ul>
           </div>
