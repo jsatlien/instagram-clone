@@ -14,16 +14,15 @@
     // overflow: auto;
     // border: 1px solid black;
 
-  border: 10px solid #fff;  
+  border: 10px solid #fff;
   float: left;
   height: 250px;
   width: 250px;
   margin: 7px;
   overflow: hidden;
-  
+
   -webkit-box-shadow: 1px 1px 1px #111;
-          box-shadow: 1px 1px 1px #111;  
-  border-radius: 25px;
+          box-shadow: 1px 1px 1px #111;
 }
 
 
@@ -34,7 +33,7 @@
 
 .home-content {
 	margin-left: 50px;
-	
+
 }
 
 .navlinks {
@@ -54,30 +53,23 @@
 	cursor: pointer;
 }
 
-.likecount {
-	margin-left: -40px;
-	position: relative;
-	top: -25px;
-}
-
 .likescounthome {
 	font-weight: bold;
 }
 
-// .homeimage {
-// 	max-height: 200px;
-// 	max-width: 200px;
+.homeimage {
+	max-height: 200px;
+	max-width: 200px;
 
-// }
+}
 
 
 .homeimage {
-    height: 175px;
+    height: 125px;
     display: block;
-    width: 220px;
+    width: 200px;
     margin: 10px auto;
-
-} 
+}
 
 #overlay .text {
 	position:relative;
@@ -93,24 +85,6 @@
 
 
 }
-
-#overlay .overlaytitle {
-	position:relative;
-	top:30px;
-	left:0px;
-	visibility:hidden;
-
-}
-
-#overlay:hover .overlaytitle {
-	color: white;
-	visibility:visible;
-	background:rgba(0,0,0,0.5);
-
-
-
-}
-
 
 .overlayfit {
 	width: 200px;
@@ -150,8 +124,6 @@
 	margin-bottom: 10px;
 }
 
-
-
 .detail-card {
     width: 640px;
     border-radius: 5px;
@@ -180,8 +152,9 @@
         .likecount {
                 font-size: 10px;
                 position: absolute;
-                bottom: 22px;
-                right: 19px;
+                bottom: 21px;
+                right: 23px;
+								text-align: center;
         }
         img {
             margin: 5px;
@@ -229,7 +202,4 @@
 
 .comment-text {
     text-align: right;
-}
-
-.figure-image {
 }
