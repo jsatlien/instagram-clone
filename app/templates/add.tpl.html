@@ -3,21 +3,21 @@
 
 <form class="form" name="new-image" ng-submit="addImage(image)">
 	<p>
-		<input class="inputwidth inputform" name="title" type="text" placeholder="Add a title..."
+		<input class="add-input inputwidth inputform" required name="title" type="text" placeholder="Add a title..."
 		   	   ng-model="image.title" />
 	</p>
 
 	<p>
-		<input class="inputwidth inputform" name="url" type="text" placeholder="Add url..."
+		<input class="add-input inputwidth inputform" required name="url" type="text" placeholder="Add url..."
 			   ng-model="image.url" />
 	</p>
 
 	<p>
-		<textarea class="textareak" name="description" type="textarea" placeholder="Add a description..."
+		<textarea class="textareak" required name="description" type="textarea" placeholder="Add a description..."
 			   ng-model="image.description">
 		</textarea>
-	</p>	
-	
+	</p>
+
 	<button class="button is-success">Add Image</button>
 
 </form>
