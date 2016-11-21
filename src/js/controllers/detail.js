@@ -16,6 +16,14 @@ function DetailController ($scope, $http, $stateParams, $state) {
     });
   };
 
+  function initComments() {
+    let commentsUrl = (SERVER + '/images/' + $stateParams.id + '/comments');
+    $http.get(commentsUrl).then((response) => {
+      $scope.comments = response.data;
+    });
+  };
+
+
   init();
 
   $scope.removeModal = function () {
@@ -48,6 +56,8 @@ function DetailController ($scope, $http, $stateParams, $state) {
     let newComment = { content: commentContent };
     $http.post(SERVER + '/images/' + $stateParams.id + '/comments', newComment).then( function(resp) {
       $scope.comments.push(newComment);
+      initComments()
+      console.log(newComment);
 
     });
     $scope.message = '';
