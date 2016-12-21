@@ -3,14 +3,14 @@ function routerConfig ($stateProvider, $urlRouterProvider){
 		.state('home', {
 			url: '/',
 			templateUrl: 'templates/home.tpl.html',
-			controller: 'HomeController',
+			controller: 'HomeController as home',
 
 		})
 
 		.state('add',{
 			url: '/add',
 			templateUrl: 'templates/add.tpl.html',
-			controller: 'AddController',
+			controller: 'AddController as add',
 
 		})
 
@@ -22,8 +22,10 @@ function routerConfig ($stateProvider, $urlRouterProvider){
 		.state('detail', {
 			url: '/detail/:id',
 			templateUrl: 'templates/detail.tpl.html',
-			controller: 'DetailController'
+			controller: 'DetailController as detail'
 		});
+
+
 
 	$urlRouterProvider.otherwise('/');
 };

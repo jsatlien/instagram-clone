@@ -1,9 +1,12 @@
 import angular from 'angular';
 
 import { routerConfig } from './routes';
+
 import { HomeController } from './controllers/home';
 import { AddController } from './controllers/add';
-import { DetailController } from './controllers/detail'
+import { DetailController } from './controllers/detail';
+
+import { ImagesService } from './services/images';
 
 import 'angular-ui-router';
 
@@ -13,3 +16,4 @@ angular
 	.controller('HomeController', HomeController)
 	.controller('AddController', AddController)
 	.controller('DetailController', DetailController)
+	.service('ImagesService', ImagesService)

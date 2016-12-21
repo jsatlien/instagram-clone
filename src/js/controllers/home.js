@@ -1,11 +1,14 @@
 import { SERVER } from '../server';
 
-function HomeController ($scope, $http) {
-	$scope.images = [];
+function HomeController ($scope, $http, ImagesService) {
+
+	let vm = this;
+	vm.images = [];
 
 	function init () {
-		$http.get(SERVER + '/images').then(function (response){
-			$scope.images = response.data;
+		ImagesService.getAllImages().then(function (response){
+			vm.images = response.data;
+			console.log(vm.images)
 		});
 	}
 	init();
@@ -13,5 +16,5 @@ function HomeController ($scope, $http) {
 
 
 
-HomeController.$inject = ['$scope', '$http'];
+HomeController.$inject = ['$scope', '$http', 'ImagesService'];
 export { HomeController };

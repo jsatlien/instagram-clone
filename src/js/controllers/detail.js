@@ -1,12 +1,23 @@
 import { SERVER } from "../server";
 
-function DetailController ($scope, $http, $stateParams, $state) {
+function DetailController ($scope, $http, $stateParams, $state, ImagesService) {
+
+  let vm = this;
+  vm.image = {};
+  vm.imageId = $stateParams.id;
+
+
   $scope.image = {};
   $scope.comments = [];
 
   function init () {
     let url = (SERVER + '/images/') + $stateParams.id;
     let commentsUrl = (SERVER + '/images/' + $stateParams.id + '/comments')
+
+    ImagesService.getImage($stateParams.id).then((resp) => {
+        vm.image = resp.data;
+        console.log('vm.image', vm.image);
+    })
     $http.get(url).then((resp) => {
       $scope.image = resp.data;
     $http.get(commentsUrl).then((response) => {
@@ -79,5 +90,5 @@ function DetailController ($scope, $http, $stateParams, $state) {
   };
 };
 
-DetailController.$inject = ['$scope', '$http', '$stateParams', '$state'];
+DetailController.$inject = ['$scope', '$http', '$stateParams', '$state', 'ImagesService'];
 export { DetailController };
