@@ -8,8 +8,9 @@
 			<a href="#/detail/{{image.id}}">
 			<!-- <span class="imagetitles overlaytitle">{{ image.title }}</span> -->
 			<p class="imagetitles overlaytitle">{{ image.title }}</p>
-
-			<img ng-src="{{image.url}}" class="homeimage"/>
+			<div class="homeimage">
+				<img ng-src="{{image.url}}"/>
+			</div>
 			<p class="text"> {{ image.like_count }} <img src="images/smallheart.png" class="smallheart" /> </p>
 			<!-- {{ image.description }} -->
 		  </div>

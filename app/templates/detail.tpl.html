@@ -8,8 +8,8 @@
           <img src="http://www.clipartbest.com/cliparts/RiG/y44/RiGy44jLT.png" alt="Image not found" class="likepic" ng-click="addLike(image)"/>
           <span class="likecount" ng-click="addLike(image)">{{ image.like_count }}</span>
         </span>
-        <figure class="image is-4by3 figure-image">
-          <img src="{{ image.url }}" alt="" ng-dblclick="addLike(image)">
+        <figure id="detail-image-container" class="image is-4by3 figure-image">
+          <img id="detail-image" src="{{ image.url }}" alt="" ng-dblclick="addLike(image)">
         </figure>
         <small class ="detail-created-at">{{ image.created_at }}</small>
       </div>
