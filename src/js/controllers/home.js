@@ -6,12 +6,19 @@ function HomeController ($scope, $http, ImagesService) {
 	vm.images = [];
 
 	function init () {
-		ImagesService.getAllImages().then(function (response){
-			vm.images = response.data;
+		ImagesService.getAllImages().then(function (response) {
+			let resp = response.data;
+			resp.forEach(function (image) {
+				image.url = ImagesService.secureImageLink(image.url);
+			})
+			vm.images = resp;
 			console.log(vm.images)
 		});
 	}
+
+
 	init();
+
 };
 
 
