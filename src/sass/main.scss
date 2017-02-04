@@ -27,18 +27,20 @@
 
 	.homeimage {
 	    height: 250px;
-	    display: block;
+	    display: flex;
+			justify-content: center;
+			align-items: center;
 	    width: 250px;
 			background-size: cover;
 		  -webkit-box-shadow: 1px 1px 1px #111;
 		  box-shadow: 1px 1px 1px #111;
 			border-radius: 3px;
 			overflow: hidden;
-
+			background-color: #C3C4C4;
+			border: 1px solid darkgrey;
 			img {
-				height: 250px;
-				width: auto;
-				margin: 0px auto;
+				height: auto;
+				width: 250px;
 			}
 
 	}
